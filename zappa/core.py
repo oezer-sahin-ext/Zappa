@@ -2309,7 +2309,8 @@ class Zappa(object):
             agw_response = self.apigateway_client.create_domain_name(
                 domainName=domain_name,
                 certificateName=certificate_name,
-                certificateArn=certificate_arn
+                certificateArn=certificate_arn,
+                securityPolicy='TLS_1_2'
             )
 
         api_id = self.get_api_id(lambda_name)
